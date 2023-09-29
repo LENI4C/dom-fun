@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <section></section>
+    <button class="create"> Create Div</button>
+    <button class="remove"> Remove Div</button>
+    <script>
+        const sec = document.querySelector("section")
+        sec.style.display = "flex"
+        sec.style.justifyContent = "space-around"
+        sec.style.flexWrap = "wrap"
+       
+        
+        let num = 0
+        const newDiv = () => {
+            var test = document.createElement("div")
+            console.log(test)
+            test.textContent = num
+            test.style.color = "beige"
+            test.style.display = "flex"
+            test.style.justifyContent = "space-around"
+            test.style.alignItems = "center"
+            test.style.backgroundColor = "red"
+            test.style.width = "100px"
+            test.style.aspectRatio = "1 / 1"
+            test.style.marginBottom = "20px"
+            test.style.borderRadius = "20px"
+            sec.append(test)
+        }
+
+        const createButton = document.querySelector(".create")
+        const removeButton = document.querySelector(".remove")
+
+        createButton.addEventListener("click", () => {
+           num++
+           newDiv()
+        })
+
+        removeButton.addEventListener("click", () => {
+           num--
+           sec.lastElementChild.remove()
+        })
+        
+
+
+    </script>
+</body>
+</html>
