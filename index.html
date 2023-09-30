@@ -9,11 +9,26 @@
     <section></section>
     <button class="create"> Create Div</button>
     <button class="remove"> Remove Div</button>
+    <button class="blue-bg"> Blue bg</button>
+
+    <style>
+        .blue {
+            background-color: blue;
+        }
+    </style>
+
     <script>
         const sec = document.querySelector("section")
         sec.style.display = "flex"
         sec.style.justifyContent = "space-around"
         sec.style.flexWrap = "wrap"
+        
+        const blueBg = document.querySelector(".blue-bg")
+        const body = document.querySelector("body")
+        blueBg.addEventListener("click", () => {
+            body.classList.toggle("blue")
+        })
+       
        
         
         let num = 0
